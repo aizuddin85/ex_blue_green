@@ -65,7 +65,7 @@ podTemplate(
         sh "oc new-build --name=nationalparks --binary=true  jboss-eap70-openshift:1.7 --to=${appNamespace}/nationalparks:${devTag} -e MAVEN_MIRROR_URL=${mavenMirrorUrl} -n ${appNamespace}"
 
         // Start to build the new build definition using artifact uploaded to Nexus above.
-        sh "oc start-build nationalparks --follow --from-file=${nexusRelUrl}/com/openshift/evg/roadshow/nationalparks/${version}/nationalparks-${version}.war -n ${appNamespace}"
+        sh "oc start-build nationalparks --follow --from-file=${nexusRelUrl}/com/openshift/evg/roadshow/nationalparks/${version}/nationalparks-${version}.jar -n ${appNamespace}"
 
         // Tag image with latest build number as latest image.
         sh "oc tag nationalparks:${devTag} nationalparks:latest -n ${appNamespace}"
