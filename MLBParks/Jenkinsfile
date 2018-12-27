@@ -26,7 +26,7 @@ podTemplate(
 
     // Checking out source.
     stage("Checking out source code") {
-      git branch: 'master', changelog: false, poll: false, url: 'https://github.com/aizuddin85/ex-blue-green.git'
+      git branch: 'master', changelog: false, poll: false, url: 'https://github.com/aizuddin85/ex_blue_green.git'
     }
 
     // For those stages below use this directory as contextDir and set build definition.
