@@ -73,7 +73,6 @@ podTemplate(
       stage("Deploying On Dev"){
         // Start to rollout latest image on Development.
         sh "oc rollout latest dc/nationalparks -n ${appNamespace}"
-      }       
       }
     }
   }
