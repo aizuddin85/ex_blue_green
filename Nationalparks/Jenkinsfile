@@ -6,7 +6,7 @@ podTemplate(
   containers: [
     containerTemplate(
       name: "jnlp",
-      image: "docker-registry.default.svc:5000/${GUID}-jenkins/jenkins-slave-appdev",
+      image: "docker-registry.default.svc:5000/jenkins/jenkins-slave-appdev",
       resourceRequestMemory: "1Gi",
       resourceLimitMemory: "2Gi"
     )
@@ -29,7 +29,7 @@ podTemplate(
 
     // Checking out source.
     stage("Checking out source code") {
-      git branch: 'master', changelog: false, poll: false, url: 'https://github.com/aizuddin85/advdev-blue-green.git'
+      git branch: 'master', changelog: false, poll: false, url: 'https://github.com/aizuddin85/ex_blue_green.git'
     }
 
     // For those stages below use this directory as contextDir and set build definition.
